@@ -1,4 +1,4 @@
-.PHONY: scp-vis pack-vis generate generate-default
+.PHONY: scp-vis pack-vis generate generate-default download-models
 
 REMOTE_HOST ?= ec2-54-174-190-147.compute-1.amazonaws.com
 SSH_KEY ?= ~/.ssh/MykhailoZiatin.pem
@@ -16,3 +16,6 @@ scp-vis:
 pack-vis:
 	zip vis.zip vis/* && \
 	mv vis.zip /home/ubuntu/
+
+download-models:
+	wget https://dl.dropboxusercontent.com/s/ozvhjkegl8oyzvu/videogan-models.zip
